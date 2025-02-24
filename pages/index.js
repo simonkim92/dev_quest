@@ -25,11 +25,11 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold">My Blog</h1>
+      <h1 className="text-3xl font-bold">블로그</h1>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
-            <Link href={`/posts/${post.slug}`} className="text-blue-500">
+            <Link href={`/posts/${post.slug}`}>
               {post.title} - {post.date}
             </Link>
           </li>
