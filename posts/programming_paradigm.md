@@ -1,13 +1,8 @@
 ---
 title: "🔥 프로그래밍 패러다임 총정리: OOP, FP, RP, FRP까지 완벽 비교!"
 date: "2025-02-25"
+imageSrc: "/images/programming_paradigm.jpg"
 ---
-
-<!-- Start of Selection -->
-<!-- Start of Selection -->
-<img src="/images/programming_paradigm.webp" alt="블로그 이미지" width="400" height="400" />
-<!-- End of Selection -->
-<!-- End of Selection -->
 
 프로그래밍을 하다 보면 다양한 패러다임을 접하게 돼. 대표적으로 객체 지향 프로그래밍(OOP), 함수형 프로그래밍(FP), 반응형 프로그래밍(RP), 그리고 함수형 반응형 프로그래밍(FRP)이 있어. 각각의 패러다임은 특정한 문제를 해결하는 데 강점을 가지고 있어! 이 글에서는 각 패러다임의 개념과 차이점을 알아보고, 어떤 경우에 어떤 패러다임을 선택하면 좋은지 비교해 보자. 🚀
 
@@ -18,7 +13,7 @@ date: "2025-02-25"
 <table border="1">
   <tr>
     <th>특징</th>
-    <th>설명</th>
+    <th>설명</th>Gimbal Lock
   </tr>
   <tr>
     <td><b>캡슐화 (Encapsulation)</b></td>

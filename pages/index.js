@@ -2,6 +2,28 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
+import styled from "styled-components";
+import "../style/globals.css"; // 글로벌 CSS 파일 임포트
+
+const Container = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+`;
+
+const PostList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const PostItem = styled.li`
+  margin: 8px 0;
+`;
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "posts");
@@ -24,17 +46,17 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold">블로그</h1>
-      <ul>
+    <Container>
+      <Title>블로그</Title>
+      <PostList>
         {posts.map((post) => (
-          <li key={post.slug}>
+          <PostItem key={post.slug}>
             <Link href={`/posts/${post.slug}`}>
               {post.title} - {post.date}
             </Link>
-          </li>
+          </PostItem>
         ))}
-      </ul>
-    </div>
+      </PostList>
+    </Container>
   );
 }
