@@ -7,21 +7,30 @@ import "../../style/globals.css";
 
 const Container = styled.div`
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Header = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #f3f4f6;
   height: 80px;
   padding: 20px;
+  position: relative;
+  margin-bottom: 30px;
 `;
+
 const MDWrapper = styled.div`
   width: 800px;
+  max-width: 90%;
 `;
+
 const Content = styled.div`
-  padding: 40px;
+  width: 100%;
   display: flex;
   justify-content: center;
 `;
@@ -30,7 +39,6 @@ const Title = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  flex-grow: 1;
 `;
 
 const DateText = styled.div`
@@ -40,8 +48,10 @@ const DateText = styled.div`
 `;
 
 const ContentImage = styled.img`
-  width: 100%; /* 이미지가 MDWrapper의 너비에 맞게 꽉 차도록 설정 */
-  height: 400px; /* 비율을 유지하면서 높이를 자동으로 조정 */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
 `;
 
 export async function getStaticPaths() {
@@ -53,7 +63,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
@@ -80,7 +90,7 @@ export default function PostPage({ frontMatter, content }) {
       </Header>
       <Content>
         <MDWrapper>
-          <ContentImage src={frontMatter.imageSrc} />
+          {frontMatter.imageSrc && <ContentImage src={frontMatter.imageSrc} />}
           <MarkdownRenderer content={content} />
         </MDWrapper>
       </Content>

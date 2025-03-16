@@ -1,6 +1,115 @@
-/* styles/globals.css */
+/* 기본 스타일 */
+html,
 body {
-  margin: 0; /* 기본 마진 제거 */
-  padding: 0; /* 필요에 따라 패딩도 제거 */
-  /* 추가 스타일을 여기에 작성할 수 있습니다 */
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 링크 스타일 */
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 마크다운 스타일 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1.25em;
+}
+
+/* 코드 하이라이팅 기본 스타일 */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  color: #d4d4d4;
+  background: #1e1e1e;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+  color: #569cd6;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+  color: #ce9178;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #6a9955;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #b5cea8;
+}
+
+.hljs-function,
+.hljs-params {
+  color: #dcdcaa;
+}
+
+/* 이미지 반응형 처리 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 코드 블록 전체 배경색 및 스타일 */
+
+pre {
+  background-color: #1e1e1e !important; /* VS Code 스타일 */
+  color: #dcdcdc !important;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+/* 코드 안쪽의 특정 요소 색 변경 */
+code {
+  font-family: "Fira Code", monospace;
+  color: #dcdcdc !important;
+}
+
+/* 코드 블록 내부 텍스트 색상 유지 */
+pre code {
+  background: none;
 }
